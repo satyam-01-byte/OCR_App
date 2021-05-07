@@ -1,0 +1,1 @@
+Convert PGM & PBM graymap images into black and white with Otsu's adaptive thresholding binarisation. 
