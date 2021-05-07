@@ -1,0 +1,1 @@
+Choose between mean & median filters with a window size of your choice to remove salt and pepper noise from PBM & PGM files.

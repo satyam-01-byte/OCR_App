@@ -1,1 +1,1 @@
-# OCR_App
+# OCR_App: preprocessing & segmentation
