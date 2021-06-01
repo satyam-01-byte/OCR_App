@@ -32,19 +32,19 @@ char *readMagicNumber(FILE *fi)
     return magic;
 }
 
-int readHeight(FILE *fi)
-{
-    int height;
-    fscanf(fi, "%d ", &height);
-    return height;
-}
-
 int readWidth(FILE *fi)
 {
     int width;
-    fscanf(fi, "%d\n", &width);
-    ignoreComments(fi);
+    fscanf(fi, "%d ", &width);
     return width;
+}
+
+int readHeight(FILE *fi)
+{
+    int height;
+    fscanf(fi, "%d\n", &height);
+    ignoreComments(fi);
+    return height;
 }
 
 int readMaxGrayValue(FILE *fi, char *magic)
@@ -90,10 +90,10 @@ void readImageContent(FILE *fi, int **image, int height, int width)
     }
 }
 
-void writeDimensions(FILE *fo, char *magic, int height, int width)
+void writeDimensions(FILE *fo, char *magic, int width, int height)
 {
     fprintf(fo, "%s\n", magic);
-    fprintf(fo, "%d %d\n", height, width);
+    fprintf(fo, "%d %d\n", width, height);
 }
 
 void writeMaxGrayValue(FILE *fo, char *magic, int maxGrayValue)

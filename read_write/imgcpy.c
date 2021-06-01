@@ -8,13 +8,13 @@ int main(int argc, char *argv[])
     checkFileStatus(fi, fo);
 
     char *magic = readMagicNumber(fi);
-    int height = readHeight(fi);
     int width = readWidth(fi);
+    int height = readHeight(fi);
     int maxGrayValue = readMaxGrayValue(fi, magic);
     int **image = initialiseImageArray(height, width);
     readImageContent(fi, image, height, width);
 
-    writeDimensions(fo, magic, height, width);
+    writeDimensions(fo, magic, width, height);
     writeMaxGrayValue(fo, magic, maxGrayValue);
     writeImageContent(fo, image, height, width);
 
